@@ -1,31 +1,190 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-  <head>
 
-    <!-- some basic stuff  -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SVG with D3</title>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Federal Inmates Have Filed Millions of Complaints Against Their Jailers. Most Go Unheard.</title>
 
-    <!-- 
-      add your stylesheet 
-      base.css loads the templated css that should not be changed
-      you can tweak your own css in custom.css and it will override base.css
-      WARNING: the order of the stylesheets matters
-    -->
-    <link rel="stylesheet" href="web/base.css">
+  <!-- Google fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet">
+  <link href="web/scrolly-images/template.css" rel="stylesheet">
+  <link href="web/scrolly-images/scrolly-styles.css" rel="stylesheet">
+  <link rel="icon" href="web/handcuffs-solid.svg">
     <link rel="stylesheet" href="web/custom.css">
+  <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollama/3.2.0/scrollama.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.3.0/d3.min.js"></script>
+  <!-- Step 2: add your d3 script below -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+  <script src="https://kit.fontawesome.com/bb1d08a9b2.js" crossorigin="anonymous"></script>
 
-    <!-- Step 2: add your d3 script below -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+  <!-- your JS code that uses d3 to manipulate data -->
+  <script src="web/construct.js"></script>
+</head>
 
-    <!-- your JS code that uses d3 to manipulate data -->
-    <script src="web/construct.js"></script>
-    
-  </head>
-  <body>
-    <div class="header-chart">
+<body>
+  <section id="scrolly-images" class="scrolly-container">
+    <div class="sticky-thing header-chart">
       <div id="my-svg-chart"></div>
-    </div>    
-  </body>
+    </div>  
+    <div class="steps-container">
+      <div class="step" id="step1">
+        <div>
+          <p>Under the <a href='https://www.bop.gov/policy/progstat/1330_018.pdf'>Administrative Remedy Program</a>, 
+            inmates held by the U.S. Bureau of Prisons (BOP) are permitted to seek "formal review of an 
+            issue relating to any aspect of [their] own confinement." Since the year 2000, prisoners have filed nearly two million
+          such cases, made <a href='https://www.data-liberation-project.org/datasets/federal-inmate-complaints/'>available to the public</a> for the first time in July after two years of FOIA requests undertaken
+        by the <a href='https://www.data-liberation-project.org/'>Data Liberation Project</a>.</p>
+        </div>
+      </div>
+      <div class="step" id="step2">
+        <p>The new data brings to light thousands of concerns raised by inmates that were never addressed. Of the 41,617 
+          unique cases to reach a final resolution in the year 2019, 41% were initially rejected and sent back to 
+          inmates without resolution. The most common reason for rejection (excluding "other") was improper level — an attempt by the inmate to file 
+          a complaint directly with the BOP Regional Director without first filing with their own warden. 
+        </p>
+      </div>
+      <div class="step" id="step3">
+        <p>2,292 complaints were rejected after reviewers determined that they did not qualify as 'sensitive.' The 
+          <a href='https://www.bop.gov/policy/progstat/1330_018.pdf'>BOP allows inmates to mark complaints as sensitive</a> and submit them 
+          directly to the Regional Director if they believe that 
+          "the inmate’s safety or well-being would be placed in danger if the Request became known at the institution."
+        </p>
+      </div>
+      <div class="step" id="step4">
+        <p>An additional 27% of complaints were reviewed as valid filings but denied without relief.
+        </p>
+      </div>
+      <div class="step" id="step5">
+        <p>Only 1.8% of complaints were granted on their first attempt.</p>
+      </div>
+      <div class="step" id="step6">
+        <p>For every five cases rejected without a decision, only two were refiled.</p>
+      </div>
+      <div class="step" id="step7">
+        <p>Those that did choose to appeal — sometimes several times — could expect to wait an average of two to three months for a final decision. 
+          By the end of the appeal process, only 3% of cases were ultimately granted remediation.</p>
+      </div>
+  </section>
+  <div class="content">
+    <div class="header">
+      <h1>Federal Inmates Have Filed Millions of Complaints Against Their Jailers. Most Go Unheard.</h1>
+      <p class="pub-tag" style="text-align: left; color: #ff6663;">— — ACADEMIC EXCERSISE, NOT FOR PUBLICATION — —</p>
+    </div>
+    <div class="byline">
+      <p>By <a href="https://declanrjb.com">Declan Bradley</a></p>
+    </div>
+  </div>
+  <div class="content">
+    <p>In early May 2019, an inmate at the <a href="https://www.bop.gov/locations/institutions/sch/">Schuykill Correctional Facility</a> in Pennsylvania filed a complaint against 
+      prison authorities for alleged "forced medical treatment." The complaint was rejected before the end of the day for being
+      untimely: according to BOP policy, institutional complaints must be filed within 20 days of an incident.
+    </p>
+    <p>Ten days later, the inmate refiled the complaint. This time it was rejected with custom remarks not released
+      to the Data Liberation Project. The complaint was rejected 10 more times over the next four months, for reasons 
+      ranging from "YOU SUBMITTED YOUR REQUEST OR APPEAL TO THE WRONG LEVEL OR WRONG OFFICE"* — to simply "OTHER." The inmate appealed their case to the Schuykill facility seven times,
+      the regional office three times, and the Bureau of Prisons itself two times. 
+    </p>
+    <figure>
+      <img
+        src="web/scrolly-images/schuykill.jpg">
+      <figcaption>The FCI Schuykill facility in Pennsylvania currently houses 1,171 male inmates. Since the year 2000, it has
+        been the subject of 9,049 inmate complaints alleging improper conduct.
+      </figcaption>
+    </figure>
+    <p>Twice, in July and August respectively, the inmate
+      filed complaints under the same case number regarding "LEGAL MATTERS / ADMINISTRATIVE REMEDY PROCEDURES", presumably
+      objecting to his inability to receive consideration for the original incident. In September, 
+      after a 12th rejection, the inmate finally gave up. Despite a dozen attempts, his complaint never received
+      a formal decision, having been rejected for consideration by the BOP every time it was filed.
+    </p>
+    <p>The Schuykill case was not unique. Since the year 2000, inmates have filed more than 130 thousand complaints alleging
+      forced medical treatment, the third most common complaint type after housing appeals and staff misconduct.
+    </p>
+    <figure>
+      <div class="flourish-embed flourish-chart" data-src="visualisation/18811001"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+    </figure>
+    <p>For every hundred such medical complaints, only about seven were ultimately granted. Yet this is a relatively high 
+      rate compared to most other types of cases. Complaints relating to "SEARCHES AND USE OF RESTRAINTS," for example, are 
+      granted only about 2% of the time.
+    </p>
+    <p>Cases with the highest odds of being granted are those related to dental care: with nine positive resolutions per hundred cases.
+      The least succesful, with less than one grant per hundred cases, are marked simply "FSA." While the Bureau of Prisons provided no
+      official translation of this code, it likely relates to the <a href="https://www.bop.gov/inmates/fsa/overview.jsp">2018 First Step Act</a>, 
+      a bipartisan bill that <a href="https://www.sentencingproject.org/policy-brief/the-first-step-act-ending-mass-incarceration-in-federal-prisons/">implemented a number of sentencing reforms</a> 
+      intended to lower the number of inmates confined in federal prisons. Secondary subjects tied to FSA cases included "FSA ELIGIBILITY"
+      and "FSA - PROGRAMMING / INCENTIVES."
+    </p>
+    <figure>
+      <h3>FSA Related Cases are Least Likely to Be Granted</h3>
+      <column>
+        <div class="flourish-embed flourish-chart" data-src="visualisation/18811074"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+      </column>
+      <column>
+        <div class="flourish-embed flourish-chart" data-src="visualisation/18811439"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+      </column>
+      <figcaption style="text-align: left;">Source: <a href="https://www.data-liberation-project.org/datasets/federal-inmate-complaints/">Bureau of Prisons, via the Data Liberation Project</a></figcaption>
+    </figure>
+    <p>According to <a href="https://docs.google.com/document/d/1vTuyUFNqS9tex4_s4PgmhF8RTvTb-uFMN5ElDjjVHTM/edit">BOP documentation</a> obtained by the Data Liberation Project, at any given time an inmate complaint is assigned one
+      of five statuses: Accepted, Rejected, Closed Granted, Closed Other, or Closed Denied. Accepted cases are exceedingly rare, and appear
+      to mark only filings that were actively under consideration at the moment the BOP exported data from its internal system. Granted cases indicate
+      that the inmate "will be granted the relief," while denied ones will not.
+    </p>
+    <p>Of the 1.78 million case tickets filed since 2000, nearly seven hundred thousand were rejected — each with one or more of thirty seven "Status Reason Codes"
+      designated by the BOP. 
+    </p>
+    <figure>
+      <div class="flourish-embed flourish-table" data-src="visualisation/18811669"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+      <figcaption style="text-align: left;">Source: <a href="https://www.data-liberation-project.org/datasets/federal-inmate-complaints/">Bureau of Prisons, via the Data Liberation Project</a></figcaption>
+    </figure>
+    <p>A hand categorization of these codes and their associated narrative descriptions shows that more than 20% of rejected cases
+      reference paperwork mistakes made by inmates, the second most common reason for rejection behind "OTHER." Such mistakes include "YOU DID NOT SUBMIT YOUR REQUEST OR APPEAL ON THE PROPER FORM (BP-9, BP-10, BP-11)"
+      and "YOU DID NOT SUBMIT A COMPLETE SET (4 CARBONIZED COPIES) OF THE REQUEST OR APPEAL FORM." Nearly 28,000 complaints were rejected
+      from consideration with the reason: "YOU DID NOT SIGN YOUR REQUEST OR APPEAL."</p>
+    <p>Of the hundreds of thousands of complaints rejected for paperwork mistakes, nearly 30% were never refiled. For those that did choose 
+      to refile, only five in every hundred were ultimately granted. 
+    </p>
+    <div class="nerd-box">
+      <div class="row">
+          <div class="title-column" style="width: 50%;">
+              <h3 style="margin-top: 5px; margin-bottom: 10px;">How It's Made</h3>
+          </div>
+          <div class="title-column" style="width: 50%;">
+              <h3 style="margin-top: 0px; text-align: right; margin-bottom: 15px;"><a class='git-tag' href="https://github.com/declanrjb/lede-project-1" style="text-decoration: none;"><i class="fa-brands fa-github"></i> GitHub</a></h3>
+          </div>
+      </div>
+      <p>*Many sections of the original BOP records — including statuses and reason codes — are written in all caps. They are preserved here for authenticity.</p>
+      <p>This story for the <a href="https://ledeprogram.com/">Lede Program</a> at Columbia University is based on <a href="https://www.data-liberation-project.org/datasets/federal-inmate-complaints/">BOP inmate complaint data</a> made available to the public thanks to the tireless work of
+        Jeremy Singer-Vine and the <a href="https://www.data-liberation-project.org/">Data Liberation Project</a>. (Disclosure: I am an unpaid volunteer for the DLP.)
+      </p>
+      <p>Data analysis was performed with <a class='tool'>R</a> and <a class='tool'>RStudio</a>. 
+          Page design made use of <a class='tool'>Coolors</a>, <a class='tool'>Flourish</a>, and <a class='tool'>GitHub Pages</a>.</p>
+      <p>The raw inmate complaints dataset (thoroughly documented <a href="https://docs.google.com/document/d/1vTuyUFNqS9tex4_s4PgmhF8RTvTb-uFMN5ElDjjVHTM/edit">here</a> by DLP volunteers) 
+      contains 37 variables of case information across 1.78 million rows. Each row represents a single filing with its associated start and
+    end dates, but not necessarily a single incident. BOP case numbers track continuing complaints across rows, and each case number
+    can appear in one or more rows. In principle, each real-world incident is assigned its own dedicated case number regardless of how
+    many times an inmate ultimately files a complaint about it, although this is difficult to verify without more information about the incidents themselves.</p>
+        <p>This story began with volunteer work I undertook for the DLP tidying the original raw dataset for easier use by researchers
+          and journalists, as well as geocoding the complaints to the real-world locations of their subject facilities. That <a href="https://github.com/declanrjb/dlp-inmate-complaints">work is ongoing</a>.
+          However, the analysis presented here is my own and should not be taken to represent the findings of the DLP or its other volunteers. This repository
+          contains the complete supporting code for my analysis, with each calculation marked with its associated conclusions found in the above article.
+        </p>
+    </div>
+  </div>
+
+  <script></script>
+  <style>
+    /* Change this to adjust the padding between steps */
+    .step {
+      margin-bottom: 70vh;
+    }
+  </style>
+
+</body>
+
 </html>

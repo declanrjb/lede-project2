@@ -1,1 +1,3 @@
 .DS_Store
+.RData
+data-analysis/data/all_complaint-filings_with-locations.csv

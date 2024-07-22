@@ -10,9 +10,61 @@
 }
 
 .header-chart {
-    margin: 0 20%;
+    margin: 0 10%;
+    width: 80%;
 }
 
+.scrolly-container {
+    height: 6500px;
+}
+
+.header {
+    padding-top: 0px;
+}
+
+.steps-container {
+    top: -1800px;
+}
+
+figure {
+    width: 110%;
+    margin-left: -5%;
+    min-height: 300px;
+}
+
+column {
+    float: left;
+    width: 50%;
+    height: fit-content;
+}
+
+.nerd-box {
+    height: fit-content;
+    border: 2px solid black;
+    padding: 10px;
+    margin-bottom: 30px;
+}
+
+.tool {
+    font-weight: bold;
+    color: #ff6663;
+}
+
+.git-tag {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 20px;
+    font-weight: normal;
+}
+
+.title-column {
+    float: left;
+    padding: 10px;
+    box-sizing: border-box;
+}
 
 
 
