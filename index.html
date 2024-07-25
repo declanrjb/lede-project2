@@ -158,17 +158,16 @@
               <h3 style="margin-top: 0px; text-align: right; margin-bottom: 15px;"><a class='git-tag' href="https://github.com/declanrjb/lede-project2" style="text-decoration: none;"><i class="fa-brands fa-github"></i> GitHub</a></h3>
           </div>
       </div>
-      <p>*Many sections of the original BOP records — including statuses and reason codes — are written in all caps. They are preserved here for authenticity.</p>
+      <p>*Many sections of the original BOP records are written in all caps. They are preserved here for authenticity.</p>
       <p>This story for the <a href="https://ledeprogram.com/">Lede Program</a> at Columbia University is based on <a href="https://www.data-liberation-project.org/datasets/federal-inmate-complaints/">BOP inmate complaint data</a> made available to the public thanks to the tireless work of
         Jeremy Singer-Vine and the <a href="https://www.data-liberation-project.org/">Data Liberation Project</a>. (Disclosure: I am an unpaid volunteer for the DLP.)
       </p>
-      <p>Data analysis was performed with <a class='tool'>R</a> and <a class='tool'>RStudio</a>. 
-          Page design made use of <a class='tool'>Coolors</a>, <a class='tool'>Flourish</a>, and <a class='tool'>GitHub Pages</a>.</p>
-      <p>The raw inmate complaints dataset (thoroughly documented <a href="https://docs.google.com/document/d/1vTuyUFNqS9tex4_s4PgmhF8RTvTb-uFMN5ElDjjVHTM/edit">here</a> by DLP volunteers) 
-      contains 37 variables of case information across 1.78 million rows. Each row represents a single filing with its associated start and
-    end dates, but not necessarily a single incident. BOP case numbers track continuing complaints across rows, and each case number
-    can appear in one or more rows. In principle, each real-world incident is assigned its own dedicated case number regardless of how
-    many times an inmate ultimately files a complaint about it, although this is difficult to verify without more information about the incidents themselves.</p>
+        <p><b>Filings: </b>Each row in the BOP complaints dataset represents a single time an inmate filed a complaint
+        with the BOP, with its subject, start and end dates, status (accepted, rejected, etc), and reasons for that status.</p>
+        <p><b>Case Numbers: </b>Case numbers track a single incident that occurred in a BOP facility. They may appear
+        across one or more rows if a prisoner refiles multiple complaints about the same incident at different times.</p>
+        <p><b>Case Subject: </b>Each complaint has both a primary and secondary subject. A single case number may appear
+        with differing subjects in different filings, but this is unusual.</p>
         <p>This story began with volunteer work I undertook for the DLP tidying the original raw dataset for easier use by researchers
           and journalists, as well as geocoding the complaints to the real-world locations of their subject facilities. That <a href="https://github.com/declanrjb/dlp-inmate-complaints">work is ongoing</a>.
           However, the analysis presented here is my own and should not be taken to represent the findings of the DLP or its other volunteers. <a href="https://github.com/declanrjb/lede-project2">This repository</a>
