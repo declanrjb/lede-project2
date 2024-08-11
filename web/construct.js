@@ -25,10 +25,6 @@ function colorizeByStatus(d) {
 
 d3.csv("viz-data/viz-data.csv")
         .then(data => {
-          // check if the data is loaded:
-          console.log(data)
-
-          
 
           // Step 5. create an SVG container inside #my-svg-chart using d3.select().append()
           const myChart = d3
@@ -126,6 +122,13 @@ d3.csv("viz-data/viz-data.csv")
       /*
       This part sets up your actions. In this case, it's changing the image in the scrolly container.
       */
+      d3.select("#step1").on('stepin', (e) => {
+        individualCharts
+            .style('stroke', d=> {
+              return 'black';
+            })
+      })
+
       d3.select("#step2").on('stepin', (e) => {
         individualCharts
             .style('stroke', d=> {

@@ -66,6 +66,11 @@ column {
     box-sizing: border-box;
 }
 
+.tag {
+    color: white;
+    padding: 4px;
+}
+
 /* margin on mobile */
 @media (max-width: 640px) {
     .header-chart {
